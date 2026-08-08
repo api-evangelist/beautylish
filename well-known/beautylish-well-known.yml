@@ -1,0 +1,43 @@
+generated: '2026-08-06'
+method: probed
+source: live probes of https://www.beautylish.com/.well-known/*
+host: www.beautylish.com
+summary: >-
+  Every standard .well-known discovery path was probed against the Beautylish
+  storefront host. All returned HTTP 404. No security.txt, no api-catalog, no
+  OIDC/OAuth metadata, no ai-plugin.json and no A2A agent card are published.
+  Absence is the finding; nothing was written to a2a/ because there was no hit.
+probes:
+- path: /.well-known/security.txt
+  status: 404
+  found: false
+- path: /.well-known/api-catalog
+  status: 404
+  found: false
+- path: /.well-known/openid-configuration
+  status: 404
+  found: false
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  found: false
+- path: /.well-known/ai-plugin.json
+  status: 404
+  found: false
+- path: /.well-known/agent-card.json
+  status: 404
+  found: false
+- path: /.well-known/agent.json
+  status: 404
+  found: false
+- path: /llms.txt
+  status: 404
+  found: false
+found: []
+notes:
+- >-
+  The storefront is fronted by CloudFront with an AWS WAF rule that answers
+  HTTP 202 and an "x-amzn-waf-action: challenge" header after roughly one
+  request per client per short window. Probes were paced and repeated until
+  each path returned a real status; only real statuses are recorded above.
+- A genuine 404 (not a soft-404 200) was returned for every path, so absence
+  here is a real negative and not an SPA catch-all false positive.
