@@ -1,7 +1,16 @@
 aid: beautylish
 name: Beautylish
-description: 'Beautylish is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Beautylish is a San Francisco based online beauty retailer and community,
+  founded in 2010 by Nils Johnson, Vu Nguyen and Sameer Iyengar. It began as a community
+  where beauty enthusiasts shared tutorials, reviews and product knowledge, and launched
+  its own e-commerce storefront in 2012. Beautylish curates makeup, skincare, hair,
+  fragrance, nails, bath and body, wellness and tool brands from around the world,
+  pairs them with editorial content and makeup-artist guidance, and operates its own
+  fulfillment, rewards (Beautylish Rewards), flexible payments and Zero Day Delivery
+  programs. The company runs a first-party storefront rather than a developer platform:
+  as of this profile it publishes no developer portal, no public API reference, no
+  OpenAPI or other machine-readable contract, and no SDKs. Its public partner surface
+  is a ShareASale/Awin affiliate program rather than an API.'
 url: https://raw.githubusercontent.com/api-evangelist/beautylish/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +21,13 @@ created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- E-Commerce
+- Retail
+- Beauty
+- Cosmetics
+- Consumer
+- Marketplace
+- Direct to Consumer
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,64 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/beautylish-domain-security.yml
+- type: LLMsTxt
+  url: llms/beautylish-llms.txt
 - type: Website
+  url: https://www.beautylish.com/
+- type: About
+  url: https://www.beautylish.com/about
+- type: HelpCenter
+  url: https://www.beautylish.com/help
+- type: Support
+  url: https://www.beautylish.com/contact-us
+- type: Blog
+  url: https://www.beautylish.com/articles
+- type: Community
+  url: https://www.beautylish.com/community
+- type: SignUp
+  url: https://www.beautylish.com/join
+- type: Login
+  url: https://www.beautylish.com/login
+- type: TermsOfService
+  url: https://www.beautylish.com/tos
+- type: PrivacyPolicy
+  url: https://www.beautylish.com/privacy
+- type: CookiePolicy
+  url: https://www.beautylish.com/cookie-policy
+- type: Accessibility
+  url: https://www.beautylish.com/accessibility
+- type: Careers
+  url: https://www.beautylish.com/careers
+- type: GitHubOrganization
+  url: https://github.com/beautylish
+- type: SecondaryMarket
   url: https://forgeglobal.com/beautylish_stock/
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Beautylish runs a first-party beauty storefront with no developer surface at
+    all: developer.beautylish.com and developers.beautylish.com do not resolve,
+    every /.well-known/ path and /llms.txt on www.beautylish.com return 404, and
+    the only public JSON on the domain is /rest/interview-product/list, a static
+    fixture of fake "Acme/Hooli" products served for their software-engineering
+    hiring exercise rather than a product API.
+  evidence:
+    - url: https://www.beautylish.com/llms.txt
+      status: 404
+    - url: https://www.beautylish.com/.well-known/agent-card.json
+      status: 404
+    - url: https://www.beautylish.com/.well-known/security.txt
+      status: 404
+    - url: https://www.beautylish.com/rest/interview-product/list
+      status: 200
+    - url: https://www.beautylish.com/help
+      status: 200
+  checked: '2026-08-06'
