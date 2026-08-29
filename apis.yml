@@ -12,6 +12,9 @@ description: 'Beautylish is a San Francisco based online beauty retailer and com
   OpenAPI or other machine-readable contract, and no SDKs. Its public partner surface
   is a ShareASale/Awin affiliate program rather than an API.'
 url: https://raw.githubusercontent.com/api-evangelist/beautylish/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "The company runs a first-party storefront rather than a developer platform: as of this profile it publishes no developer portal, no public API reference, no OpenAPI or other machine-readable contract,"
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
